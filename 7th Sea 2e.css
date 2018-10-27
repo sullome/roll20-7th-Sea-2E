@@ -1,0 +1,674 @@
+/*
+  Common elements
+ */
+h1, h2 {
+    background-color: #771213;
+    color: white;
+
+    font-size: large;
+    font-family: "Calluna Sans", Helvetica, sans-serif;
+
+    /* We need to cancel base Roll20 styles */
+    line-height: initial;
+    /*
+       And we also need to center text vertically,
+       so we do it with padding.
+     */
+    padding: 0.2em 0em;
+
+    text-align: center;
+    text-transform: uppercase;
+
+    margin-top: 0.3;
+}
+
+h2 {
+    background-color: #BF755F;
+}
+
+h3,
+.sheet-rolltemplate-risk h3 {
+    font-weight: normal;
+    text-decoration: underline dotted #BF755F;
+    text-transform: capitalize;
+}
+
+h4,
+.sheet-rolltemplate-risk h4 {
+    font-family: "Adobe Jenson Pro", "Book Antiqua", Palatino, serif;
+    text-transform: capitalize;
+
+    display: inline;
+    padding-right: 1ch;
+
+    /* Getting rid of unneeded styles from Roll20 */
+    font-size: medium;
+}
+
+hr {
+    color: #BF755F;
+
+    /* Getting rid of unneded styles from Roll20 */
+    border-color: #BF755F;
+    margin: 4px;
+}
+
+img {
+    /* Scale down if needed */
+    max-width: 100%;
+    height: auto;
+}
+
+input[type="text"] {
+    border: none;
+    border-radius: unset;
+    border-bottom: 2px solid #771213;
+
+    box-sizing: border-box;
+    margin: auto;
+    width: 100%;
+
+    font-family: "Adobe Jenson Pro", "Book Antiqua", Palatino, serif;
+
+    /* Getting rid of unneded styles from Roll20 */
+    vertical-align: baseline;
+    padding-bottom: 0;
+    box-shadow: unset;
+}
+
+input[type="text"]:hover,
+input[type="text"]:focus {
+    text-decoration: underline dashed black;
+}
+
+input[type="number"] {
+    /* Getting rid of unneded styles from Roll20 */
+    vertical-align: baseline;
+    font-size: medium;
+}
+
+select {
+    /* Getting rid of unneded styles from Roll20 */
+    margin: auto;
+    font-size: medium;
+    width: auto;
+}
+
+textarea {
+    /* This element should look like regular <p> */
+    display: block;
+
+    box-sizing: border-box;
+    margin: 4px 0px;
+    padding: 4px;
+    width: 100%;
+    height: 3em;
+
+    border: 1px dashed transparent;
+    box-shadow: unset;
+    resize: none;
+
+    white-space: pre-line;
+
+    font-family: "Adobe Jenson Pro", "Book Antiqua", Palatino, serif;
+}
+
+
+textarea:hover,
+textarea:focus {
+    /*
+      Cannot be grouped into one "border" setting —
+      for some reason, "initial" not works that way
+     */
+    border-width: 1px;
+    border-style: dashed;
+    border-color: initial;
+
+    /*
+      User should see all of his inputed whitespaces and line-breaks
+     */
+    white-space: pre;
+
+    resize: vertical;
+}
+
+.sheet-dices,
+.sheet-rolltemplate-risk .sheet-dices {
+    font-family: dicefontd10;
+    font-size: xx-large;
+}
+
+/*
+  Background
+  ...and default font
+ */
+.charsheet {
+    background:
+        linear-gradient(to right, #BCD0CF, #EDE4DB 30%, #F7F0E8 75%, #D7DBCD);
+    font-size: medium;
+}
+
+/*
+  Style of drop-down sections
+ */
+.sheet-details > input[type="checkbox"] {
+    display: block;
+    width: 100%;
+
+    /* Calculating same size as <h1> plus it's padding */
+    font-size: large;
+    font-family: "Calluna Sans", Helvetica, sans-serif;
+    height: 1.6em;
+    margin-bottom: -1.9em; /* Height + top margin of <h1> */
+    position: relative;
+    z-index: 2;
+
+    opacity: 0;
+}
+
+.sheet-details > input,
+.sheet-details > h1 {
+    margin-top: 0.3em;
+}
+
+.sheet-details > div {
+    margin: 0px 4px 6px 4px;
+    padding: 6px 4px;
+
+    /* Initial state of dropdowns */
+    display: none;
+}
+
+.sheet-details > div:not(.sheet-spiral) {
+    background-color: white;
+}
+
+.sheet-details > input[type="checkbox"]:checked ~ div {
+    display: block;
+}
+
+/*
+  Style, used for:
+      Character Information;
+      Stories;
+      Traits (.sheet-table and <h4>).
+
+  Be careful with changing styles for .sheet-table and <h4> elements,
+  because those styles are used for Traits section too.
+ */
+.sheet-table {
+    display: table;
+    width: 100%;
+    box-sizing: border-box;
+
+    margin: auto;
+
+    border-spacing: 0.4em;
+}
+
+.sheet-table_row {
+    display: table-row;
+}
+
+.sheet-table_row > * {
+    display: table-cell;
+    max-width: 100%;
+
+    font-family: "Adobe Jenson Pro", "Book Antiqua", Palatino, serif;
+}
+
+.sheet-table_row > h4 {
+    text-align: right;
+    padding-right: 1.5ch;
+}
+
+/*
+   Style for dots used in Traits and Skills
+ */
+.sheet-dots {
+    /* Important for absolute positioning of fake radios */
+    position: relative;
+    display: inline-block;
+    width: 100px; /* (16px * 5 + special zero radio) */
+    height: 16px; /* Default radio size */
+
+    /* Important for usage of relative units (em and ch) in radios and spans */
+    font-family: "Calluna Sans", Helvetica, Arial, sans-serif;
+    font-size: xx-large;
+
+    vertical-align: bottom;
+}
+
+/* Real radio */
+.sheet-dots > input[type="radio"] {
+    /* Just fancy mouse cursor */
+    cursor: pointer;
+
+    opacity: 0;
+    position: absolute;
+    z-index: 1;
+}
+
+/* Fake radio */
+.sheet-dots > input[type="radio"] + span {
+    position: absolute;
+
+    text-align: center;
+    vertical-align: sub;
+}
+
+.sheet-dots > input[type="radio"],
+.sheet-dots > input[type="radio"] + span {
+    /* Important for absolute positioning of radios */
+    display: inline-block;
+    width: 16px; /* Default radio width */
+}
+
+/* Fake and real radio positions (absolute inside .sheet-dots) */
+.sheet-dots > span:nth-of-type(2),
+.sheet-dots > input:nth-of-type(2) {
+    left: 0;
+}
+.sheet-dots > span:nth-of-type(3),
+.sheet-dots > input:nth-of-type(3) {
+    left: 16px;
+}
+.sheet-dots > span:nth-of-type(4),
+.sheet-dots > input:nth-of-type(4) {
+    left: 32px;
+}
+.sheet-dots > span:nth-of-type(5),
+.sheet-dots > input:nth-of-type(5) {
+    left: 48px;
+}
+.sheet-dots > span:nth-of-type(6),
+.sheet-dots > input:nth-of-type(6) {
+    left: 64px;
+}
+
+/* Real radio for zero value */
+.sheet-dots > span:first-of-type,
+.sheet-dots > input:first-of-type {
+    left: 84px;
+}
+
+/* Fake radio for zero value */
+.sheet-dots > span:first-of-type {
+    border-radius: 3px;
+    font-family: Pictos;
+    font-size: smaller;
+
+    top: -10%;
+}
+
+.sheet-dots > span:first-of-type:hover,
+.sheet-dots > input:first-of-type:hover {
+    text-shadow: 0 0 3px #8FB1D9;
+}
+
+/* Fake radio */
+.sheet-dots > input[type="radio"] + span:not(:first-of-type)::before {
+    content: "⚫";
+}
+
+/* Remove dot from all radios _after_ selected one */
+.sheet-dots > input[type="radio"]:checked ~ input[type="radio"] + span::before {
+    content: "⚪";
+}
+
+/*
+  Style for Traits
+ */
+.sheet-traits .sheet-table_row > * {
+    width: 50%;
+}
+
+.sheet-traits .sheet-dots > input:first-of-type,
+.sheet-traits .sheet-dots > span:first-of-type {
+    display: none;
+}
+
+/*
+  Style for Skills
+ */
+.sheet-columns {
+    column-count: 2;
+}
+
+/* Doesn't work now, but maybe in future... */
+@media screen and (min-width: 1000px) {
+    .columns {
+        column-count: 4;
+    }
+}
+
+.sheet-columns > div {
+    width: 32ch; /* TODO: This should be redone to be better for translations */
+    margin: auto;
+    text-align: right;
+}
+
+.sheet-columns h4 {
+    text-align: right;
+}
+
+/*
+  Styles for Risk section
+ */
+.sheet-risk,
+.sheet-risk > *,
+.sheet-roll-mod,
+.sheet-risk-result,
+.sheet-risk-result > * {
+    font-family: "Adobe Jenson Pro", "Book Antiqua", Palatino, serif;
+}
+
+.sheet-risk,
+.sheet-roll-mod,
+.sheet-risk-result {
+    text-align: center;
+    margin: 0.5em auto;
+}
+
+.sheet-roll-mod .repcontrol,
+.sheet-risk-result > br ~ span,
+.sheet-risk-result > span:empty ~ button {
+    display: none;
+}
+
+.sheet-risk-result > button {
+    /* Getting rid of unneded styles from Roll20 */
+    padding: 4px 10px;
+}
+
+/*
+  Styles used for Backgrounds and Advantages
+ */
+.sheet-background,
+.sheet-advantage {
+    margin: 16px 8px;
+}
+
+.sheet-background input[type="text"],
+.sheet-advantage  input[type="text"],
+.sheet-background h3 {
+    padding: 4px;
+    margin: 0px;
+}
+
+.sheet-background input[type="text"],
+.sheet-advantage  input[type="text"] {
+    /* This element should look like modified h2 */
+    display: block;
+    width: 100%;
+    border: none;
+
+    background-color: #BF755F;
+    color: white;
+    text-decoration-color: white;
+
+    font-family: "Calluna Sans", Helvetica, sans-serif;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: large;
+
+    /*
+      Center text vertically,
+      taking care of spece between lines and text decoration
+     */
+    padding-top: 0.4em;
+    padding-bottom: 0.15em;
+}
+
+/* Backgrounds-only styles */
+.sheet-background h3 {
+    padding-bottom: 0px;
+}
+
+.sheet-background textarea {
+    font-family: "Calluna Sans", Helvetica, sans-serif;
+}
+
+/*
+  Style for Arcana
+ */
+.sheet-arcana {
+    margin: 16px 8px;
+}
+
+.sheet-arcana .sheet-table_row > * {
+    width: 50%;
+    font-family: "Calluna Sans", Helvetica, sans-serif;
+}
+
+.sheet-arcana h3 {
+    font-size: x-large;
+    text-decoration: none;
+}
+
+.sheet-arcana input {
+    font-size: large;
+
+    /* Overwriting the defaults */
+    border-bottom: none;
+    font-family: "Calluna Sans", Helvetica, sans-serif;
+}
+
+.sheet-arcana textarea {
+    height: 7em;
+}
+
+/*
+  Styles for Stories
+ */
+.sheet-story {
+    counter-reset: story_steps;
+}
+
+.sheet-story > div:last-child div.repcontainer {
+    display: table;
+    border-spacing: 0.4em;
+    width: 100%;
+}
+
+.sheet-story > div:last-child div.repitem {
+    counter-increment: story_steps;
+    display: table-row;
+}
+
+.sheet-story > div:last-child div.repitem h4,
+.sheet-story > div:last-child div.repitem input {
+    display: table-cell;
+}
+
+.sheet-story > div:last-child div.repitem h4 {
+    width: 3ch;
+}
+
+.sheet-story > div:last-child div.repitem h4::before {
+    content: counter(story_steps);
+}
+
+/*
+  Styles for Death Spiral
+ */
+.sheet-spiral {
+    background: transparent;
+}
+
+.sheet-spiral > div {
+    position: relative;
+
+    /* Centered */
+    display: table;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.sheet-spiral > div > img {
+    display: block;
+}
+
+/* Wounds */
+.sheet-spiral > div > input,
+.sheet-spiral > div > input + div {
+    position: absolute;
+    width: 10%;
+    height: 11%;
+}
+
+.sheet-spiral > div > input {
+    z-index: 1;
+    opacity: 0;
+}
+
+.sheet-spiral > div > input:not(:first-of-type) + div {
+    background: repeating-linear-gradient(135deg, rgba(0, 0, 0, 0), #CCC 3px, rgba(0, 0, 0, 0) 6px);
+    border-radius: 50%;
+}
+
+.sheet-spiral > div > input.sheet-wounds:checked ~ input.sheet-wounds + div,
+.sheet-spiral > div > input.sheet-dramatic:checked ~ input.sheet-dramatic + div {
+    background: transparent;
+}
+
+/* Zero input for clearing Wounds */
+.sheet-spiral > div > input:first-of-type + div {
+    font-family: Pictos;
+    font-size: 175%;
+    line-height: 175%;
+    text-align: center;
+
+    border-radius: 50%;
+    border: thin solid black;
+}
+
+/* Zero input for clearing Dramatic Wounds */
+.sheet-spiral > div > input:nth-of-type(18) {
+    display: none;
+}
+
+/* Wounds position */
+.sheet-spiral > div > input:nth-of-type(1),
+.sheet-spiral > div > input:nth-of-type(1) + div  { top: 61%; left:  7%; }
+.sheet-spiral > div > input:nth-of-type(2),
+.sheet-spiral > div > input:nth-of-type(2) + div  { top: 47%; left:  5%; }
+.sheet-spiral > div > input:nth-of-type(3),
+.sheet-spiral > div > input:nth-of-type(3) + div  { top: 35%; left: 10%; }
+.sheet-spiral > div > input:nth-of-type(4),
+.sheet-spiral > div > input:nth-of-type(4) + div  { top: 24%; left: 17%; }
+.sheet-spiral > div > input:nth-of-type(5),
+.sheet-spiral > div > input:nth-of-type(5) + div  { top: 15%; left: 26%; }
+.sheet-spiral > div > input:nth-of-type(6),
+.sheet-spiral > div > input:nth-of-type(6) + div  { top: 11%; left: 53%; }
+.sheet-spiral > div > input:nth-of-type(7),
+.sheet-spiral > div > input:nth-of-type(7) + div  { top: 15%; left: 64%; }
+.sheet-spiral > div > input:nth-of-type(8),
+.sheet-spiral > div > input:nth-of-type(8) + div  { top: 25%; left: 73%; }
+.sheet-spiral > div > input:nth-of-type(9),
+.sheet-spiral > div > input:nth-of-type(9) + div  { top: 37%; left: 79%; }
+.sheet-spiral > div > input:nth-of-type(10),
+.sheet-spiral > div > input:nth-of-type(10) + div { top: 67%; left: 78%; }
+.sheet-spiral > div > input:nth-of-type(11),
+.sheet-spiral > div > input:nth-of-type(11) + div { top: 76%; left: 69%; }
+.sheet-spiral > div > input:nth-of-type(12),
+.sheet-spiral > div > input:nth-of-type(12) + div { top: 82%; left: 59%; }
+.sheet-spiral > div > input:nth-of-type(13),
+.sheet-spiral > div > input:nth-of-type(13) + div { top: 83%; left: 47%; }
+.sheet-spiral > div > input:nth-of-type(14),
+.sheet-spiral > div > input:nth-of-type(14) + div { top: 65%; left: 26%; }
+.sheet-spiral > div > input:nth-of-type(15),
+.sheet-spiral > div > input:nth-of-type(15) + div { top: 51%; left: 25%; }
+.sheet-spiral > div > input:nth-of-type(16),
+.sheet-spiral > div > input:nth-of-type(16) + div { top: 40%; left: 31%; }
+.sheet-spiral > div > input:nth-of-type(17),
+.sheet-spiral > div > input:nth-of-type(17) + div { top: 35%; left: 42%; }
+
+/* Dramatic Wounds position */
+.sheet-spiral > div > input:nth-of-type(19),
+.sheet-spiral > div > input:nth-of-type(19) + div { top: 10%; left: 39%; }
+.sheet-spiral > div > input:nth-of-type(20),
+.sheet-spiral > div > input:nth-of-type(20) + div { top: 52%; left: 82%; }
+.sheet-spiral > div > input:nth-of-type(21),
+.sheet-spiral > div > input:nth-of-type(21) + div { top: 76%; left: 35%; }
+.sheet-spiral > div > input:nth-of-type(22),
+.sheet-spiral > div > input:nth-of-type(22) + div { top: 42%; left: 54%; }
+
+/*
+  Style for logo
+ */
+.sheet-logo {
+    /* Centered */
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/*
+  Style for roll template
+ */
+.sheet-rolltemplate-risk .sheet-rolled {
+    display: none;
+
+}
+
+.sheet-rolltemplate-risk:hover .sheet-rolled {
+    display: block;
+}
+
+.sheet-rolltemplate-risk .sheet-rolled > span {
+    background-color: white;
+    border-radius: 2px;
+
+    padding: 0.3em;
+
+    /* Copy Roll20 "diceroll" class properties */
+    font-family: "Calluna Sans", Helvetica, Arial, sans-serif;
+    font-size: 1.2em;
+    line-height: 2em;
+}
+
+.sheet-rolltemplate-risk .sheet-rolled > span > div {
+    /* Copy Roll20 "diceroll" class properties */
+    display: inline-block;
+    position: relative;
+
+    min-width: 30px;
+    text-align: center;
+
+}
+
+.sheet-rolltemplate-risk .sheet-rolled > span > div > div:first-child {
+    /* Copy Roll20 "didroll" class properties */
+    position: relative;
+    top: 0;
+    margin-top: -3px;
+
+    height: auto;
+    min-height: 29px;
+
+    color: black;
+    text-shadow:
+        -1px -1px 1px #FFF,1px -1px 1px #FFF,-1px 1px 1px #FFF,1px 1px 1px #FFF;
+    text-align: center;
+
+    z-index: 2;
+}
+
+.sheet-rolltemplate-risk .sheet-rolled > span > div > div:last-child {
+    /* Copy Roll20 "backing" class properties */
+    position: absolute;
+    top: -2px;
+    left: 0;
+
+    width: 100%;
+    text-align: center;
+
+    color: #8FB1D9;
+    font-family: "dicefontd10";
+    font-size: 30px;
+    text-shadow: 0 0 3px #8FB1D9;
+
+    opacity: .75;
+    z-index: 1;
+}

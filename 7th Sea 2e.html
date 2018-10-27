@@ -1,0 +1,1269 @@
+<!-- {{{ Character information -->
+<div class="details">
+    <input type="checkbox" />
+
+    <h1 data-i18n="character-information">Character Information</h1>
+
+    <div class="description">
+        <div class="table">
+            <div class="table_row">
+                <h4 data-i18n="player">Player</h4>
+                <input type="text" name="attr_player" />
+            </div>
+            <div class="table_row">
+                <h4 data-i18n="character">Character</h4>
+                <input type="text" name="attr_character_name" />
+            </div>
+            <div class="table_row">
+                <h4 data-i18n="concept">Concept</h4>
+                <input type="text" name="attr_concept" />
+            </div>
+            <div class="table_row">
+                <h4 data-i18n="nation">Nation</h4>
+                <input type="text" name="attr_nation" />
+                <!--
+                    It is not possible to make this as a <select>,
+                    because not all of the nations are available for free.
+                    For example, pirate nations.
+                -->
+            </div>
+            <div class="table_row">
+                <h4 data-i18n="religion">Religion</h4>
+                <!-- Same as with nations. -->
+                <input type="text" name="attr_religion" />
+            </div>
+            <div class="table_row">
+                <h4 data-i18n="reputations">Reputations</h4>
+                <input type="text" name="attr_reputations" />
+            </div>
+            <div class="table_row">
+                <h4 data-i18n="wealth">Wealth</h4>
+                <input type="number" min=0 value=0 name="attr_wealth" />
+            </div>
+        </div>
+    </div>
+</div>
+<!-- }}} -->
+
+<!-- {{{ Traits -->
+<div class="details">
+    <input type="checkbox" />
+
+    <h1 data-i18n="traits">Traits</h1>
+
+    <!-- TODO
+        Minimum and maximum values should be set.
+        A Trait cannot be below Rank 2,
+        and sum of the Traits cannot exceed 15.
+        p.160
+    -->
+    <div class="traits">
+        <div class="table">
+            <div class="table_row">
+                <h4 data-i18n="brawn">Brawn</h4>
+                <div>
+                    <span class="dots">
+                        <input type="radio" name="attr_brawn" value=0>
+                        <span>*</span>
+                        <input type="radio" name="attr_brawn" value=1>
+                        <span></span>
+                        <!--
+                            Default value for a Trait is 2 dots.
+                            So the second radio should be checked.
+                        -->
+                        <input type="radio" name="attr_brawn" value=2 checked>
+                        <span></span>
+                        <input type="radio" name="attr_brawn" value=3>
+                        <span></span>
+                        <input type="radio" name="attr_brawn" value=4>
+                        <span></span>
+                        <input type="radio" name="attr_brawn" value=5>
+                        <span></span>
+                    </span>
+                </div>
+            </div>
+            <div class="table_row">
+                <h4 data-i18n="finesse">Finesse</h4>
+                <div>
+                    <span class="dots">
+                        <input type="radio" name="attr_finesse" value=0>
+                        <span>*</span>
+                        <input type="radio" name="attr_finesse" value=1>
+                        <span></span>
+                        <!--
+                            Default value for a Trait is 2 dots.
+                            So the second radio should be checked.
+                        -->
+                        <input type="radio" name="attr_finesse" value=2 checked>
+                        <span></span>
+                        <input type="radio" name="attr_finesse" value=3>
+                        <span></span>
+                        <input type="radio" name="attr_finesse" value=4>
+                        <span></span>
+                        <input type="radio" name="attr_finesse" value=5>
+                        <span></span>
+                    </span>
+                </div>
+            </div>
+            <div class="table_row">
+                <h4 data-i18n="resolve">Resolve</h4>
+                <div>
+                    <span class="dots">
+                        <input type="radio" name="attr_resolve" value=0>
+                        <span>*</span>
+                        <input type="radio" name="attr_resolve" value=1>
+                        <span></span>
+                        <!--
+                            Default value for a Trait is 2 dots.
+                            So the second radio should be checked.
+                        -->
+                        <input type="radio" name="attr_resolve" value=2 checked>
+                        <span></span>
+                        <input type="radio" name="attr_resolve" value=3>
+                        <span></span>
+                        <input type="radio" name="attr_resolve" value=4>
+                        <span></span>
+                        <input type="radio" name="attr_resolve" value=5>
+                        <span></span>
+                    </span>
+                </div>
+            </div>
+            <div class="table_row">
+                <h4 data-i18n="wits">Wits</h4>
+                <div>
+                    <span class="dots">
+                        <input type="radio" name="attr_wits" value=0>
+                        <span>*</span>
+                        <input type="radio" name="attr_wits" value=1>
+                        <span></span>
+                        <!--
+                            Default value for a Trait is 2 dots.
+                            So the second radio should be checked.
+                        -->
+                        <input type="radio" name="attr_wits" value=2 checked>
+                        <span></span>
+                        <input type="radio" name="attr_wits" value=3>
+                        <span></span>
+                        <input type="radio" name="attr_wits" value=4>
+                        <span></span>
+                        <input type="radio" name="attr_wits" value=5>
+                        <span></span>
+                    </span>
+                </div>
+            </div>
+            <div class="table_row">
+                <h4 data-i18n="panache">Panache</h4>
+                <div>
+                    <span class="dots">
+                        <input type="radio" name="attr_panache" value=0>
+                        <span>*</span>
+                        <input type="radio" name="attr_panache" value=1>
+                        <span></span>
+                        <!--
+                            Default value for a Trait is 2 dots.
+                            So the second radio should be checked.
+                        -->
+                        <input type="radio" name="attr_panache" value=2 checked>
+                        <span></span>
+                        <input type="radio" name="attr_panache" value=3>
+                        <span></span>
+                        <input type="radio" name="attr_panache" value=4>
+                        <span></span>
+                        <input type="radio" name="attr_panache" value=5>
+                        <span></span>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- }}} -->
+
+<!-- {{{ Skills -->
+<div class="details">
+    <input type="checkbox" />
+
+    <h1 data-i18n="skills">Skills</h1>
+
+    <div class="skills columns">
+        <div>
+            <h4 data-i18n="aim">Aim</h4>
+            <span class="dots">
+                <input type="radio" name="attr_aim" value=0 checked>
+                <span>*</span>
+                <input type="radio" name="attr_aim" value=1>
+                <span></span>
+                <input type="radio" name="attr_aim" value=2>
+                <span></span>
+                <input type="radio" name="attr_aim" value=3>
+                <span></span>
+                <input type="radio" name="attr_aim" value=4>
+                <span></span>
+                <input type="radio" name="attr_aim" value=5>
+                <span></span>
+            </span>
+        </div>
+        <div>
+            <h4 data-i18n="athletics">Athletics</h4>
+            <span class="dots">
+                <input type="radio" name="attr_athletics" value=0 checked>
+                <span>*</span>
+                <input type="radio" name="attr_athletics" value=1>
+                <span></span>
+                <input type="radio" name="attr_athletics" value=2>
+                <span></span>
+                <input type="radio" name="attr_athletics" value=3>
+                <span></span>
+                <input type="radio" name="attr_athletics" value=4>
+                <span></span>
+                <input type="radio" name="attr_athletics" value=5>
+                <span></span>
+            </span>
+        </div>
+        <div>
+            <h4 data-i18n="brawl">Brawl</h4>
+            <span class="dots">
+                <input type="radio" name="attr_brawl" value=0 checked>
+                <span>*</span>
+                <input type="radio" name="attr_brawl" value=1>
+                <span></span>
+                <input type="radio" name="attr_brawl" value=2>
+                <span></span>
+                <input type="radio" name="attr_brawl" value=3>
+                <span></span>
+                <input type="radio" name="attr_brawl" value=4>
+                <span></span>
+                <input type="radio" name="attr_brawl" value=5>
+                <span></span>
+            </span>
+        </div>
+        <div>
+            <h4 data-i18n="convince">Convince</h4>
+            <span class="dots">
+                <input type="radio" name="attr_convince" value=0 checked>
+                <span>*</span>
+                <input type="radio" name="attr_convince" value=1>
+                <span></span>
+                <input type="radio" name="attr_convince" value=2>
+                <span></span>
+                <input type="radio" name="attr_convince" value=3>
+                <span></span>
+                <input type="radio" name="attr_convince" value=4>
+                <span></span>
+                <input type="radio" name="attr_convince" value=5>
+                <span></span>
+            </span>
+        </div>
+        <div>
+            <h4 data-i18n="empathy">Empathy</h4>
+            <span class="dots">
+                <input type="radio" name="attr_empathy" value=0 checked>
+                <span>*</span>
+                <input type="radio" name="attr_empathy" value=1>
+                <span></span>
+                <input type="radio" name="attr_empathy" value=2>
+                <span></span>
+                <input type="radio" name="attr_empathy" value=3>
+                <span></span>
+                <input type="radio" name="attr_empathy" value=4>
+                <span></span>
+                <input type="radio" name="attr_empathy" value=5>
+                <span></span>
+            </span>
+        </div>
+        <div>
+            <h4 data-i18n="hide">Hide</h4>
+            <span class="dots">
+                <input type="radio" name="attr_hide" value=0 checked>
+                <span>*</span>
+                <input type="radio" name="attr_hide" value=1>
+                <span></span>
+                <input type="radio" name="attr_hide" value=2>
+                <span></span>
+                <input type="radio" name="attr_hide" value=3>
+                <span></span>
+                <input type="radio" name="attr_hide" value=4>
+                <span></span>
+                <input type="radio" name="attr_hide" value=5>
+                <span></span>
+            </span>
+        </div>
+        <div>
+            <h4 data-i18n="intimidate">Intimidate</h4>
+            <span class="dots">
+                <input type="radio" name="attr_intimidate" value=0 checked>
+                <span>*</span>
+                <input type="radio" name="attr_intimidate" value=1>
+                <span></span>
+                <input type="radio" name="attr_intimidate" value=2>
+                <span></span>
+                <input type="radio" name="attr_intimidate" value=3>
+                <span></span>
+                <input type="radio" name="attr_intimidate" value=4>
+                <span></span>
+                <input type="radio" name="attr_intimidate" value=5>
+                <span></span>
+            </span>
+        </div>
+        <div>
+            <h4 data-i18n="notice">Notice</h4>
+            <span class="dots">
+                <input type="radio" name="attr_notice" value=0 checked>
+                <span>*</span>
+                <input type="radio" name="attr_notice" value=1>
+                <span></span>
+                <input type="radio" name="attr_notice" value=2>
+                <span></span>
+                <input type="radio" name="attr_notice" value=3>
+                <span></span>
+                <input type="radio" name="attr_notice" value=4>
+                <span></span>
+                <input type="radio" name="attr_notice" value=5>
+                <span></span>
+            </span>
+        </div>
+        <div>
+            <h4 data-i18n="perform">Perform</h4>
+            <span class="dots">
+                <input type="radio" name="attr_perform" value=0 checked>
+                <span>*</span>
+                <input type="radio" name="attr_perform" value=1>
+                <span></span>
+                <input type="radio" name="attr_perform" value=2>
+                <span></span>
+                <input type="radio" name="attr_perform" value=3>
+                <span></span>
+                <input type="radio" name="attr_perform" value=4>
+                <span></span>
+                <input type="radio" name="attr_perform" value=5>
+                <span></span>
+            </span>
+        </div>
+        <div>
+            <h4 data-i18n="ride">Ride</h4>
+            <span class="dots">
+                <input type="radio" name="attr_ride" value=0 checked>
+                <span>*</span>
+                <input type="radio" name="attr_ride" value=1>
+                <span></span>
+                <input type="radio" name="attr_ride" value=2>
+                <span></span>
+                <input type="radio" name="attr_ride" value=3>
+                <span></span>
+                <input type="radio" name="attr_ride" value=4>
+                <span></span>
+                <input type="radio" name="attr_ride" value=5>
+                <span></span>
+            </span>
+        </div>
+        <div>
+            <h4 data-i18n="sailing">Sailing</h4>
+            <span class="dots">
+                <input type="radio" name="attr_sailing" value=0 checked>
+                <span>*</span>
+                <input type="radio" name="attr_sailing" value=1>
+                <span></span>
+                <input type="radio" name="attr_sailing" value=2>
+                <span></span>
+                <input type="radio" name="attr_sailing" value=3>
+                <span></span>
+                <input type="radio" name="attr_sailing" value=4>
+                <span></span>
+                <input type="radio" name="attr_sailing" value=5>
+                <span></span>
+            </span>
+        </div>
+        <div>
+            <h4 data-i18n="scholarship">Scholarship</h4>
+            <span class="dots">
+                <input type="radio" name="attr_scholarship" value=0 checked>
+                <span>*</span>
+                <input type="radio" name="attr_scholarship" value=1>
+                <span></span>
+                <input type="radio" name="attr_scholarship" value=2>
+                <span></span>
+                <input type="radio" name="attr_scholarship" value=3>
+                <span></span>
+                <input type="radio" name="attr_scholarship" value=4>
+                <span></span>
+                <input type="radio" name="attr_scholarship" value=5>
+                <span></span>
+            </span>
+        </div>
+        <div>
+            <h4 data-i18n="tempt">Tempt</h4>
+            <span class="dots">
+                <input type="radio" name="attr_tempt" value=0 checked>
+                <span>*</span>
+                <input type="radio" name="attr_tempt" value=1>
+                <span></span>
+                <input type="radio" name="attr_tempt" value=2>
+                <span></span>
+                <input type="radio" name="attr_tempt" value=3>
+                <span></span>
+                <input type="radio" name="attr_tempt" value=4>
+                <span></span>
+                <input type="radio" name="attr_tempt" value=5>
+                <span></span>
+            </span>
+        </div>
+        <div>
+            <h4 data-i18n="theft">Theft</h4>
+            <span class="dots">
+                <input type="radio" name="attr_theft" value=0 checked>
+                <span>*</span>
+                <input type="radio" name="attr_theft" value=1>
+                <span></span>
+                <input type="radio" name="attr_theft" value=2>
+                <span></span>
+                <input type="radio" name="attr_theft" value=3>
+                <span></span>
+                <input type="radio" name="attr_theft" value=4>
+                <span></span>
+                <input type="radio" name="attr_theft" value=5>
+                <span></span>
+            </span>
+        </div>
+        <div>
+            <h4 data-i18n="warfare">Warfare</h4>
+            <span class="dots">
+                <input type="radio" name="attr_warfare" value=0 checked>
+                <span>*</span>
+                <input type="radio" name="attr_warfare" value=1>
+                <span></span>
+                <input type="radio" name="attr_warfare" value=2>
+                <span></span>
+                <input type="radio" name="attr_warfare" value=3>
+                <span></span>
+                <input type="radio" name="attr_warfare" value=4>
+                <span></span>
+                <input type="radio" name="attr_warfare" value=5>
+                <span></span>
+            </span>
+        </div>
+        <div>
+            <h4 data-i18n="weaponry">Weaponry</h4>
+            <span class="dots">
+                <input type="radio" name="attr_weaponry" value=0 checked>
+                <span>*</span>
+                <input type="radio" name="attr_weaponry" value=1>
+                <span></span>
+                <input type="radio" name="attr_weaponry" value=2>
+                <span></span>
+                <input type="radio" name="attr_weaponry" value=3>
+                <span></span>
+                <input type="radio" name="attr_weaponry" value=4>
+                <span></span>
+                <input type="radio" name="attr_weaponry" value=5>
+                <span></span>
+            </span>
+        </div>
+    </div>
+</div>
+<!-- }}} -->
+
+<!-- {{{ Risk -->
+<div class="details">
+    <input type="checkbox" />
+
+    <h1 data-i18n="risk">Risk</h1>
+
+    <div>
+        <div class="risk">
+            <select name="attr_risk_trait">
+                <option value="-">
+                    <span data-i18n="trait">Trait</span>…
+                </option>
+                <option value="brawn"   data-i18n="brawn"  >Brawn</option>
+                <option value="finesse" data-i18n="finesse">Finesse</option>
+                <option value="resolve" data-i18n="resolve">Resolve</option>
+                <option value="wits"    data-i18n="wits"   >Wits</option>
+                <option value="panache" data-i18n="panache">Panache</option>
+            </select>
+            +
+            <select name="attr_risk_skill">
+                <option value="-">
+                    <span data-i18n="skill">Skill</span>…
+                </option>
+                <option value="aim" data-i18n="aim">
+                    Aim
+                </option>
+                <option value="athletics" data-i18n="athletics">
+                    Athletics
+                </option>
+                <option value="brawl" data-i18n="brawl">
+                    Brawl
+                </option>
+                <option value="convince" data-i18n="convince">
+                    Convince
+                </option>
+                <option value="empathy" data-i18n="empathy">
+                    Empathy
+                </option>
+                <option value="hide" data-i18n="hide">
+                    Hide
+                </option>
+                <option value="intimidate" data-i18n="intimidate">
+                    Intimidate
+                </option>
+                <option value="notice" data-i18n="notice">
+                    Notice
+                </option>
+                <option value="perform" data-i18n="perform">
+                    Perform
+                </option>
+                <option value="ride" data-i18n="ride">
+                    Ride
+                </option>
+                <option value="sailing" data-i18n="sailing">
+                    Sailing
+                </option>
+                <option value="scholarship" data-i18n="scholarship">
+                    Scholarship
+                </option>
+                <option value="tempt" data-i18n="tempt">
+                    Tempt
+                </option>
+                <option value="theft" data-i18n="theft">
+                    Theft
+                </option>
+                <option value="warfare" data-i18n="warfare">
+                    Warfare
+                </option>
+                <option value="weaponry" data-i18n="weaponry">
+                    Weaponry
+                </option>
+            </select>
+            +
+            <input type="number" min=0 value=0 name="attr_risk_bonus" />
+            <span data-i18n="risk-bonus-dice">Bonus Dice</span>
+        </div>
+
+        <div class="roll-mod">
+            <fieldset class="repeating_rollmodifiers">
+                <h4><span name="attr_modifier"></span>:</h4>
+                <span name="attr_effect"></span>
+            </fieldset>
+        </div>
+
+        <hr />
+
+        <div class="risk-result">
+            <span name="attr_risk_result_message"></span>
+            <br />
+            <br />
+            <span name="attr_risk_dice_count"></span>
+            <span name="attr_risk_result_rolls"></span>
+            <span name="attr_risk_result_raises"></span>
+
+            <button type="roll" data-i18n="risk-send-results-to-chat"
+value="&{template:risk} {{trait=@{risk_trait}}} {{skill=@{risk_skill}}} {{raises=@{risk_result_raises}}} @{risk_result_rolls}"
+            >
+                Send results to chat
+            </button>
+            <button type="roll" data-i18n="risk-just-roll-dice"
+                value="/roll @{risk_dice_count}d10"
+            >
+                Just roll the dice
+            </button>
+        </div>
+    </div>
+</div>
+<!-- }}} -->
+
+<!-- {{{ Backgrounds -->
+<div class="details">
+    <input type="checkbox" />
+
+    <h1 data-i18n="backgrounds">Backgrounds</h1>
+
+    <div class="backgrounds">
+        <fieldset class="repeating_background">
+            <div class="background">
+                <input type="text"
+                    name="attr_background_title"
+                    value="Background title"
+                    data-i18n-value="background-title"
+                />
+                <textarea
+                    name="attr_background_description"
+                    data-i18n="background-description"
+                    >Background description…</textarea>
+
+                <hr/>
+
+                <h3 data-i18n="quirk">Quirk</h3>
+                <textarea
+                    name="attr_quirk_description"
+                    data-i18n="quirk-description"
+                    >Quirk description…</textarea>
+            </div>
+        </fieldset>
+    </div>
+</div>
+<!-- }}} -->
+
+<!-- {{{ Advantages -->
+<div class="details">
+    <input type="checkbox" />
+
+    <h1 data-i18n="advantages">Advantages</h1>
+
+    <!-- TODO
+        There can be _a lot_ of advantages,
+        so it is better to make them as <details> too.
+
+        Same with Backgrounds.
+
+        (By <details> I mean that <div class="details"> construction,
+        because as far as I know it is not easy to implement real <details>
+        in character sheets.)
+    -->
+    <div class="advantages">
+        <fieldset class="repeating_advantage">
+            <div class="advantage">
+                <input type="text"
+                    name="attr_advantage_title"
+                    value="Advantage Title"
+                    data-i18n-value="advantage-title"
+                />
+                <textarea
+                    name="attr_advantage_description"
+                    data-i18n="advantage-description"
+                    >Advantage description…</textarea>
+            </div>
+        </fieldset>
+    </div>
+</div>
+<!-- }}} -->
+
+<!-- {{{ Arcana -->
+<div class="details">
+    <input type="checkbox" />
+
+    <h1 data-i18n="arcana">Arcana</h1>
+
+    <!--
+        Hero can have only one Virtue and only one Hubris.
+        But they can be changed (as a Story reward, for example).
+
+        There are a lot of new Arcana in the additional books,
+        so <select> wouldn't work.
+    -->
+    <div class="arcana">
+        <div class="table">
+            <div class="table_row">
+                <div>
+                    <h3 data-i18n="virtue">Virtue</h3>
+                    <input
+                        type="text"
+                        name="attr_virtue"
+                        value="Arcanum: Virtue title"
+                        data-i18n-value="virtue-title"
+                    />
+                    <textarea
+                        name="attr_virtue_description"
+                        data-i18n="virtue-description"
+                        >Virtue description…</textarea>
+                </div>
+                <div>
+                    <h3 data-i18n="hubris">Hubris</h3>
+                    <input
+                        type="text"
+                        name="attr_hubris"
+                        value="Arcanum: Hubris title"
+                        data-i18n-value="hubris-title"
+                    />
+                    <textarea
+                        name="attr_hubris_description"
+                        data-i18n="hubris-description"
+                        >Hubris description…</textarea>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- }}} -->
+
+<!-- {{{ Stories -->
+<div class="details">
+    <input type="checkbox" />
+
+    <h1 data-i18n="stories">Stories</h1>
+
+    <div class="stories">
+        <fieldset class="repeating_story">
+            <div class="story table">
+                <div class="table_row">
+                    <h4 data-i18n="story-name">Name</h4>
+                    <input type="text" name="attr_story_name" />
+                </div>
+                <div class="table_row">
+                    <h4 data-i18n="goal">Goal</h4>
+                    <input type="text" name="attr_story_goal" />
+                </div>
+                <div class="table_row">
+                    <h4 data-i18n="reward">Reward</h4>
+                    <input type="text" name="attr_story_reward" />
+                        <!-- {{{ TODO
+                            Maybe it is better to make <select> here?
+                            Story can have several rewards.
+                            And it is possible to show total amount
+                            of required steps.
+
+                            UPD:
+                            Actually, it is not clear about several rewards.
+                            Better to leave this for later.
+                        }}} -->
+                        <!-- {{{ TODO
+                        <select name="attr_story_reward">
+                            TODO: Add <select> of skills
+                            <option value="skill">Skill improvement</option>
+
+                            TODO: Add <select> of advandate points
+                            <option value="advantage">New Advantage</option>
+
+                            TODO: Add <input text> for quirk
+                            <option value="quirk">Change Quirk</option>
+
+                            <option value="virtue">Change Virtue</option>
+                            <option value="hubris">Change Hubris</option>
+
+                            TODO: Add <select> for Traits
+                            <option value="ctrait">Change Trait</option>
+
+                            TODO: can only be done twice
+                            <option value="itrait">Increase Trait</option>
+
+                            <option value="corrupt">Remove Corruption</option>
+                        </select>
+                        }}} -->
+                </div>
+                <div class="table_row">
+                    <h4 data-i18n="story-steps">Steps</h4>
+                    <div>
+                        <fieldset class="repeating_storystep">
+                            <h4>.</h4>
+                            <input type="text" name="attr_story_step" />
+                        </fieldset>
+                    </div>
+                </div>
+            </div>
+        </fieldset>
+    </div>
+</div>
+<!-- }}} -->
+
+<!-- {{{ Death Spiral -->
+<div class="details">
+    <input type="checkbox" />
+
+    <h1 data-i18n="death-spiral">Death Spiral</h1>
+    <div class="spiral">
+        <div>
+            <img
+src="https://raw.githubusercontent.com/sullome/roll20-7th-Sea-2E/master/images/death_spiral.png"
+             />
+
+            <input type="radio" class="wounds" name="attr_wounds" value=0 />
+            <div>*</div>
+            <input type="radio" class="wounds" name="attr_wounds" value=1 />
+            <div></div>
+            <input type="radio" class="wounds" name="attr_wounds" value=2 />
+            <div></div>
+            <input type="radio" class="wounds" name="attr_wounds" value=3 />
+            <div></div>
+            <input type="radio" class="wounds" name="attr_wounds" value=4 />
+            <div></div>
+
+            <input type="radio" class="wounds" name="attr_wounds" value=6 />
+            <div></div>
+            <input type="radio" class="wounds" name="attr_wounds" value=7 />
+            <div></div>
+            <input type="radio" class="wounds" name="attr_wounds" value=8 />
+            <div></div>
+            <input type="radio" class="wounds" name="attr_wounds" value=9 />
+            <div></div>
+
+            <input type="radio" class="wounds" name="attr_wounds" value=11 />
+            <div></div>
+            <input type="radio" class="wounds" name="attr_wounds" value=12 />
+            <div></div>
+            <input type="radio" class="wounds" name="attr_wounds" value=13 />
+            <div></div>
+            <input type="radio" class="wounds" name="attr_wounds" value=14 />
+            <div></div>
+
+            <input type="radio" class="wounds" name="attr_wounds" value=16 />
+            <div></div>
+            <input type="radio" class="wounds" name="attr_wounds" value=17 />
+            <div></div>
+            <input type="radio" class="wounds" name="attr_wounds" value=18 />
+            <div></div>
+            <input type="radio" class="wounds" name="attr_wounds" value=19 />
+            <div></div>
+
+            <!-- Dramatic wounds are separate "progress bar" -->
+            <input type="radio" class="dramatic" name="attr_dramatic" value=0 />
+            <input type="radio" class="dramatic" name="attr_dramatic" value=1 />
+            <div></div>
+            <input type="radio" class="dramatic" name="attr_dramatic" value=2 />
+            <div></div>
+            <input type="radio" class="dramatic" name="attr_dramatic" value=3 />
+            <div></div>
+            <input type="radio" class="dramatic" name="attr_dramatic" value=4 />
+            <div></div>
+        </div>
+    </div>
+</div>
+<!-- }}} -->
+
+<!-- 7th Sea Second Edition official logo -->
+<!--
+    TODO: Path to the image should be changed
+    in the process of merging with Roll20 upstream
+-->
+<img class="logo" alt="7th Sea Second Edition"
+    src="https://raw.githubusercontent.com/sullome/roll20-7th-Sea-2E/master/images/logo.png"
+/>
+
+<!-- {{{ Worker Scripts -->
+<script type="text/worker">
+    // Events handling
+    on("sheet:opened",
+        handleOpeningSheet
+    );
+    on("change:risk_trait change:risk_skill change:risk_bonus change:dramatic",
+        handleRiskChange
+    );
+    on("change:wounds change:dramatic",
+        handleDeathSpiral
+    );
+
+    // "Handle" functions
+    function handleOpeningSheet() {
+        console.log("=== Clearing Risk parameters");
+        setAttrs({
+            risk_trait: "-",
+            risk_skill: "-",
+            risk_dice_count: 0,
+            risk_result_message: "",
+            risk_result_rolls: "",
+            risk_result_raises: 0
+        });
+        console.log("=== Clearing Risk roll modifiers");
+        clearRepeatingSection("rollmodifiers", function() {
+            console.log("=== Cleared Risk roll modifiers");
+        });
+    }
+
+    function handleRiskChange(eventInfo) {
+        console.log("=== Handling Risk Change");
+
+        // Asynchronous, so we need to use callbacks.
+        // We need to clear roll modifiers repeating section,
+        // but it is also an asynchronous task.
+        // So we clear first and then use callback
+        clearRepeatingSection("rollmodifiers", function() {
+            console.log("=== Getting Risk attributes");
+            getAttrs(["risk_trait", "risk_skill"], function(values) {
+                console.log("=== Getting values of "
+                    + values.risk_trait
+                    + " and "
+                    + values.risk_skill
+                );
+
+                // Check that both trait and skill were selected
+                if (values.risk_trait == "-" || values.risk_skill == "-") {
+                    console.log("=== Either Trait or Skill is absent.");
+                    console.log("=== Aborting hadling Risk Change.");
+                    return;
+                }
+
+                getAttrs([
+                    values.risk_trait,
+                    values.risk_skill,
+                    "risk_bonus",
+                    "dramatic"
+                    ],
+                    callbackRiskChange
+                );
+            });
+        });
+    }
+
+    function handleDeathSpiral(eventInfo) {
+        console.log("=== Handling change of Wounds or Dramatic Wounds");
+        if (eventInfo.sourceAttribute == "wounds" && eventInfo.newValue == 0) {
+            console.log("=== Clearing all Wounds and Dramatic Wounds");
+            setAttrs({
+                wounds: 0,
+                dramatic: 0
+            });
+        } else {
+            console.log("=== Checking for the correctness of Dramatic Wounds");
+            getAttrs(["wounds", "dramatic"],
+                callbackDeathSpiral
+            );
+        }
+    }
+
+    // "Callback" functions
+    function callbackRiskChange(rollParameters) {
+        var newAttributes = {};
+        var trait = 2;
+        var skill = 0;
+        var bonus = 0;
+        var dramaticWounds = 0;
+        var reroll = false;
+        var explode = false;
+        var doubleRaises = false;
+
+        // Parse roll parameters
+        console.log("=== Parsing roll parameters");
+        for (parameter in rollParameters) {
+            switch (parameter) {
+                case "risk_bonus":
+                    bonus = bonus + parseInt(rollParameters[parameter]);
+                    console.log("=== Roll: " + bonus + " Bonus Die");
+                    break;
+                case "dramatic":
+                    dramaticWounds = parseInt(rollParameters[parameter]);
+                    console.log("=== Roll: "
+                        + dramaticWounds
+                        + " Dramatic Wounds"
+                    );
+                    break;
+                case "brawn":
+                case "finesse":
+                case "resolve":
+                case "wits":
+                case "panache":
+                    trait = parseInt(rollParameters[parameter]);
+                    console.log("=== Roll: "
+                        + "Trait is " + parameter
+                        + " and its rank is " + trait
+                    );
+                    break;
+                default:
+                    skill = parseInt(rollParameters[parameter]);
+                    console.log("=== Roll: "
+                        + "Skill is " + parameter
+                        + " and its rank is " + skill
+                    );
+            }
+        }
+
+        // Setting the total dice count
+        newAttributes["risk_dice_count"] = trait + skill + bonus;
+
+        // Figure out roll modifiers
+        if (dramaticWounds == 1) {
+            bonus = bonus + 1;
+
+            addEffectDescription(
+                newAttributes,
+                "rollmodifiers",
+                "risk-dramatic-wound"
+            );
+            console.log("=== Roll: "
+                + "1 Dramatic Wound - 1 Bonus Die was added. Now: "
+                + bonus
+                + " Bonus Die."
+            );
+        }
+
+        if (skill > 2) {
+            reroll = true;
+
+            addEffectDescription(
+                newAttributes,
+                "rollmodifiers",
+                "risk-skill-3"
+            );
+            console.log("=== Roll: "
+                + "Skill rank is 3 or more - a single die will be rerolled"
+            );
+            console.log("=== Rerolls are turned off for now.")
+        }
+
+        if (skill > 3) {
+            doubleRaises = true;
+
+            addEffectDescription(
+                newAttributes,
+                "rollmodifiers",
+                "risk-skill-4"
+            );
+            console.log("=== Roll: "
+                + "Skill rank is 4 or more - sets of 15 will count as 2 Raises"
+            );
+        }
+
+        if (skill > 4 || dramaticWounds == 3) {
+            explode = true;
+
+            if (dramaticWounds == 3) {
+                addEffectDescription(
+                    newAttributes,
+                    "rollmodifiers",
+                    "risk-dramatic-wound3"
+                );
+            } else {
+                addEffectDescription(
+                    newAttributes,
+                    "rollmodifiers",
+                    "risk-skill-5"
+                );
+            }
+            console.log("=== Roll: "
+                + "Skill rank 5 or 3 Dramatic Wounds "
+                + "- 10s will explode (+1 die)"
+            );
+        }
+
+        // Set all required PC attributes
+        console.log("=== Setting new attributes before calculating a roll");
+        newAttributes["risk_result_message"] = getTranslationByKey(
+            "risk-message-calculating"
+        );
+        setAttrs(newAttributes);
+
+        // Roll dices
+        var rolls = rollDices(trait + skill + bonus, explode);
+
+        // Calculate Raises
+        var raises = calculateRaises(rolls, doubleRaises);
+
+        console.log("=== Roll: rolled dices: " + rolls);
+        console.log("=== Roll: gathered raises: " + raises);
+
+        // Save rolls and raises into the PC attributes
+        newAttributes = {};
+        newAttributes["risk_result_rolls"] = asTextDices(rolls);
+        newAttributes["risk_result_raises"] = raises;
+        newAttributes["risk_result_message"] = getTranslationByKey(
+            "risk-message-calculated"
+        );
+
+        // Set all required PC attributes
+        // sort of "return" for this function
+        console.log("=== Setting new attributes after taking a Risk");
+        setAttrs(newAttributes);
+    }
+
+    function callbackClearRepeatingSection(sectionName, rowIDs) {
+        for(var i = 0; i < rowIDs.length; i++) {
+            removeRepeatingRow(
+                "repeating_" + sectionName + "_" + rowIDs[i]
+            );
+            console.log("=== Cleared row "
+                + rowIDs[i] + " "
+                + "from section "
+                + '"' + sectionName + '"'
+            );
+        }
+    }
+
+    // This is needed to automatically update dramatic wounds,
+    // but only if needed.
+    // It is possible for a Hero to have no Wounds,
+    // but several Dramatic Wounds.
+    // The reverse case (many Wounds, but no Dramatic Wounds), however,
+    // is impossible.
+    function callbackDeathSpiral(spiralState) {
+        var minDramatic = Math.floor(spiralState.wounds / 5);
+        if (spiralState.dramatic < minDramatic) {
+            setAttrs({
+                dramatic: minDramatic
+            });
+        }
+    }
+
+    //{{{ *** Raises calculation ***
+    function calculateRaises(rolls, doubleRaises) {
+        //{{{ Validations
+
+        // Validate the variable (it should be array)
+        if (!Array.isArray(rolls)) {
+            console.log("=== Not an array.");
+            return 0;
+        }
+
+        // Array should contain only numbers
+        for (n in rolls) {
+            if (isNaN(n)) {
+                console.log("=== NaN in the array: " + n)
+                return 0;
+            }
+        }
+
+        // Check that we can do calculations
+        if (rolls.length < 1) {
+            console.log("=== Array length is too small: " + rolls.length);
+            return 0;
+        }
+
+        //}}}
+
+        // Sort rolls descending
+        console.log("=== Sorting array: " + rolls);
+        rolls.sort(function(a, b) {
+            return b - a;
+        });
+        console.log("=== Sorted array: " + rolls);
+
+        // Declare target numbers
+        var normalNumber = 10;
+        var doubleNumber = 15;
+        var targetNumber = normalNumber;
+
+        if (doubleRaises === true) {
+            targetNumber = doubleNumber;
+        }
+        var consoleDoubleRaises = (doubleRaises) ? "ON" : "OFF";
+        console.log("=== Double Raises " + consoleDoubleRaises);
+
+        // Declare result Raises
+        var raises = 0;
+
+        // Main loop
+        var rollsCopy = rolls.slice(); // Deep copy (because elements are nums)
+        while (rollsCopy.length > 0) {
+            console.log("=== Rolls: " + rollsCopy);
+
+            // Get the highest number
+            var rollsSum = rollsCopy.shift();
+
+            // Sum with the lowest numbers
+            while (rollsSum < targetNumber && rollsCopy.length > 0) {
+                rollsSum += rollsCopy.pop();
+            }
+
+            // Check for gathered Raises
+            if (rollsSum >= normalNumber) {
+                raises++;
+            }
+            if (rollsSum >= doubleNumber && doubleRaises === true) {
+                raises++;
+            }
+            console.log("=== Raises: " + raises);
+        }
+
+        return raises;
+    }
+    //}}}
+
+    // {{{ Utility functions
+
+    // Synchronous
+    function addEffectDescription(obj, repSection, key) {
+        var newRowName = "repeating_" + repSection + "_" + generateRowID();
+
+        obj[newRowName + "_modifier"] = getTranslationByKey(key);
+        obj[newRowName + "_effect"]   = getTranslationByKey(key + "-effect");
+    }
+
+    // Asynchronous, so it is possible to pass your own callback
+    function clearRepeatingSection(sectionName, callbackFunction) {
+        console.log("=== Clearing repeating section named "
+            + '"' + sectionName + '"'
+        );
+        getSectionIDs("repeating_" + sectionName,
+            function(IDArray) {
+                callbackClearRepeatingSection(sectionName, IDArray);
+                callbackFunction();
+            }
+        );
+    }
+
+    // That's asynchronous. Be very careful with this.
+    function clearRollResults() {
+        console.log("=== Clearing roll results");
+
+        var newAttributes = {};
+        newAttributes["risk_result_rolls"] = "";
+        newAttributes["risk_result_raises"] = 0;
+        newAttributes["risk_result_message"] =
+            "Roll results were cleared. You can Risk again!";
+        setAttrs(newAttributes);
+    }
+
+    // Converts an array of numbers from 1 to 10
+    // into the text dices for Roll20 special font
+    function asTextDices(rolls) {
+        var props = [];
+        for (var i = 0; i < rolls.length; i++) {
+            props.push("{{rolled" + i + "=" + rolls[i] + "}}");
+        }
+
+        return props.join(" ");
+    }
+
+    // d10 rolling
+    function rollDice() {
+        return Math.floor(Math.random() * 10) + 1;
+    }
+
+    function rollDices(count, explode) {
+        console.log("=== Rolling " + count + " dices");
+        var results = [];
+
+        for (var i = 0; i < count; i++) {
+            results.push(rollDice());
+        }
+        console.log("=== Rolled dices: " + results); /*DEBUG*/
+
+        if (explode === true) {
+            console.log("=== Exploding dices");
+            results = explodeDices(results);
+            console.log("=== Exploded dices: " + results); /*DEBUG*/
+        }
+
+        return results;
+    }
+
+    function explodeDices(dices) {
+        var newRolls = [];
+
+        for (var i = 0; i < dices.length; i++) {
+            if (dices[i] == 10) {
+                newRolls.push(rollDice());
+            }
+        }
+
+        if (newRolls.length > 0) {
+            newRolls = explodeDices(newRolls);
+            return dices.concat(newRolls);
+        } else {
+            return dices
+        }
+    }
+
+    //}}}
+</script>
+<!-- }}} -->
+
+<!-- {{{ Roll Templates -->
+<rolltemplate class="sheet-rolltemplate-risk">
+    <h3>
+        <span data-i18n-dynamic>{{trait}}</span>
+        +
+        <span data-i18n-dynamic>{{skill}}</span>
+    </h3>
+    <div class="rolled">
+        <span>
+            {{#allprops() trait skill raises}}
+            <div>
+                <div>{{value}}</div>
+                <div>0</div>
+            </div>
+            {{/allprops() trait skill raises}}
+        </span>
+    </div>
+    <p>
+        <h4><span data-i18n="rolltemplate-raises">Raises</span>:</h4>
+        {{raises}}
+    </p>
+</rolltemplate>
+<!-- }}} -->
