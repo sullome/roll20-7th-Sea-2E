@@ -1035,8 +1035,10 @@ src="https://raw.githubusercontent.com/sullome/roll20-7th-Sea-2E/master/images/d
         // Calculate Raises
         var raises = calculateRaises(rolls, doubleRaises);
 
-        console.log("=== Roll: rolled dices: " + rolls);
-        console.log("=== Roll: gathered raises: " + raises);
+        // Debug messages.
+        // They really helps cheating.
+        //console.log("=== Roll: rolled dices: " + rolls);
+        //console.log("=== Roll: gathered raises: " + raises);
 
         // Save rolls and raises into the PC attributes
         newAttributes = {};
@@ -1107,11 +1109,13 @@ src="https://raw.githubusercontent.com/sullome/roll20-7th-Sea-2E/master/images/d
         //}}}
 
         // Sort rolls descending
-        console.log("=== Sorting array: " + rolls);
+        //console.log("=== Sorting array: " + rolls); // Debug, cheat
+        console.log("=== Sorting array");
         rolls.sort(function(a, b) {
             return b - a;
         });
-        console.log("=== Sorted array: " + rolls);
+        //console.log("=== Sorted array: " + rolls); // Debug, cheat
+        console.log("=== Sorted array");
 
         // Declare target numbers
         var normalNumber = 10;
@@ -1130,7 +1134,8 @@ src="https://raw.githubusercontent.com/sullome/roll20-7th-Sea-2E/master/images/d
         // Main loop
         var rollsCopy = rolls.slice(); // Deep copy (because elements are nums)
         while (rollsCopy.length > 0) {
-            console.log("=== Rolls: " + rollsCopy);
+            //console.log("=== Rolls: " + rollsCopy); // Debug, cheat
+            console.log("=== Rolls copy");
 
             // Get the highest number
             var rollsSum = rollsCopy.shift();
@@ -1147,7 +1152,8 @@ src="https://raw.githubusercontent.com/sullome/roll20-7th-Sea-2E/master/images/d
             if (rollsSum >= doubleNumber && doubleRaises === true) {
                 raises++;
             }
-            console.log("=== Raises: " + raises);
+            //console.log("=== Raises: " + raises); // Debug, cheat
+            console.log("=== Raises gathered");
         }
 
         return raises;
@@ -1212,12 +1218,12 @@ src="https://raw.githubusercontent.com/sullome/roll20-7th-Sea-2E/master/images/d
         for (var i = 0; i < count; i++) {
             results.push(rollDice());
         }
-        console.log("=== Rolled dices: " + results); /*DEBUG*/
+        //console.log("=== Rolled dices: " + results); // Debug, cheat
 
         if (explode === true) {
             console.log("=== Exploding dices");
             results = explodeDices(results);
-            console.log("=== Exploded dices: " + results); /*DEBUG*/
+            //console.log("=== Exploded dices: " + results); // Debug, cheat
         }
 
         return results;
